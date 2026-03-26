@@ -40,14 +40,23 @@ public class ChamadaDaApi extends Cep{
 
             setJson(response.body());
 
+
+
         } catch (NumberFormatException | IOException | InterruptedException e) {
             System.out.println("Erro capturado: " + e.getMessage());
 
         } catch (NullPointerException e) {
             System.out.println("Valores estão recebendo como null como valor");
+
         } catch (IllegalArgumentException e) {
             System.out.println("API precisa de um protocolo para retornar, re-veja!");;
         }
 
+    }
+
+    public boolean encontraCep() {
+       return json != null
+               && !json.isBlank()
+               && !json.contains("\"erro\" : true");
     }
 }

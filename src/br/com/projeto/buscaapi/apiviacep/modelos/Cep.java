@@ -15,6 +15,7 @@ public class Cep {
     }
 
     public Cep(ApiRefatorada cep) {
+        this.cep = cep.cep();
         this.logradouro = cep.logradouro();
         this.bairro = cep.bairro();
         this.localidade = cep.localidade();
@@ -28,11 +29,11 @@ public class Cep {
 
     @Override
     public String toString() {
-        return "Cep {" +  "cep = " + cep +
-                ", logradouro = " + logradouro +
-                ", bairro = " + bairro +
-                ", localidade = " + localidade +
-                ", estado = " + estado +
-                ", uf = " + uf +"}";
+        return "\nCep {cep = " + cep +
+                ",\nlogradouro = " + logradouro +
+                ",\nbairro = " + bairro +
+                ",\nlocalidade = " + localidade +
+                ",\nestado = " + estado +
+                ",\nuf = " + uf +"}\n";
     }
 }
