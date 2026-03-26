@@ -3,6 +3,7 @@ import br.com.projeto.buscaapi.apiviacep.modelos.ChamadaDaApi;
 import br.com.projeto.buscaapi.apiviacep.modelos.GsonBiulder;
 import br.com.projeto.buscaapi.apiviacep.record.ApiRefatorada;
 
+import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -12,6 +13,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         String chamadaCep;
         List<Cep> listaCep = new ArrayList<>();
+        GsonBiulder gson =  new GsonBiulder();
 
         while (true) {
 
@@ -33,7 +35,6 @@ public class Main {
                     continue;
                 }
 
-                GsonBiulder gson =  new GsonBiulder();
                 gson.chamaGson();
                 ApiRefatorada cepInfos = gson.getGson().fromJson(chamarApi.getJson(), ApiRefatorada.class);
 
@@ -49,9 +50,7 @@ public class Main {
 
             }
         }
-
-        for (Cep ceps : listaCep) {
-            System.out.println(ceps);
-        }
+        gson.criaArquivo(listaCep);
+        
     }
 }

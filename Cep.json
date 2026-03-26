@@ -1,0 +1,18 @@
+[
+  {
+    "cep": "03064-000",
+    "logradouro": "Avenida Celso Garcia",
+    "bairro": "Tatuapé",
+    "localidade": "São Paulo",
+    "estado": "São Paulo",
+    "uf": "SP"
+  },
+  {
+    "cep": "01001-000",
+    "logradouro": "Praça da Sé",
+    "bairro": "Sé",
+    "localidade": "São Paulo",
+    "estado": "São Paulo",
+    "uf": "SP"
+  }
+]
